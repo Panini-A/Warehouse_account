@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Склад" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-QCC3FJS\SQLEXPRESS;Initial Catalog=Склад;Integrated Security=True" SettingsObjectName="Storage.Properties.Settings" SettingsPropertyName="СкладConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Готовая продукция]" Member="Готовая_продукция">
+    <Type Name="Готовая_продукция">
+      <Column Name="[Код товара]" Member="Код_товара" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Наименование товара]" Member="Наименование_товара" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Количество изготовлений]" Member="Количество_изготовлений" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Код сырья]" Member="Код_сырья" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Готовая_продукция_Операции_по_готовой_продукции" Member="Операции_по_готовой_продукции" ThisKey="Код_товара" OtherKey="Код_товара" Type="Операции_по_готовой_продукции" />
+      <Association Name="Готовая_продукция_Склад_ГП" Member="Склад_ГП" ThisKey="Код_товара" OtherKey="Код_товара" Type="Склад_ГП" Cardinality="One" />
+      <Association Name="Цех_Готовая_продукция" Member="Цех" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Цех" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Заказчик ГП]" Member="Заказчик_ГП">
+    <Type Name="Заказчик_ГП">
+      <Column Name="[Номер заказа]" Member="Номер_заказа" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Наименование заказчика]" Member="Наименование_заказчика" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Наименование товара]" Member="Наименование_товара" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Количество" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Адрес" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Телефон" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Заказ закрыт]" Member="Заказ_закрыт" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[Код товара]" Member="Код_товара" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Склад_ГП_Заказчик_ГП" Member="Склад_ГП" ThisKey="Код_товара" OtherKey="Код_товара" Type="Склад_ГП" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Информация по товарам]" Member="Информация_по_товарам">
+    <Type Name="Информация_по_товарам">
+      <Column Name="[Код товара]" Member="Код_товара" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Код сырья]" Member="Код_сырья" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Количество сырья, необходимое для производства данного товара]" Member="Количество_сырья__необходимое_для_производства_данного_товара" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Склад_ГП_Информация_по_товарам" Member="Склад_ГП" ThisKey="Код_товара" OtherKey="Код_товара" Type="Склад_ГП" IsForeignKey="true" />
+      <Association Name="Склад_СиМ_Информация_по_товарам" Member="Склад_СиМ" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Склад_СиМ" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Операции по готовой продукции]" Member="Операции_по_готовой_продукции">
+    <Type Name="Операции_по_готовой_продукции">
+      <Column Name="[Номер операции]" Member="Номер_операции" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Код товара]" Member="Код_товара" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Наименование товара]" Member="Наименование_товара" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Статус" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Дата" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Количество" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Готовая_продукция_Операции_по_готовой_продукции" Member="Готовая_продукция" ThisKey="Код_товара" OtherKey="Код_товара" Type="Готовая_продукция" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Операции по складу ГП]" Member="Операции_по_складу_ГП">
+    <Type Name="Операции_по_складу_ГП">
+      <Column Name="[Номер операции]" Member="Номер_операции" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Код товара]" Member="Код_товара" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Наименование товара]" Member="Наименование_товара" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Статус" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Дата" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Количество" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Склад_ГП_Операции_по_складу_ГП" Member="Склад_ГП" ThisKey="Код_товара" OtherKey="Код_товара" Type="Склад_ГП" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Операции по цеху]" Member="Операции_по_цеху">
+    <Type Name="Операции_по_цеху">
+      <Column Name="[Номер операции]" Member="Номер_операции" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Код сырья]" Member="Код_сырья" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Наименование сырья]" Member="Наименование_сырья" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Статус" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Дата" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Количество" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Цех_Операции_по_цеху" Member="Цех" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Цех" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Поставщик СиМ]" Member="Поставщик_СиМ">
+    <Type Name="Поставщик_СиМ">
+      <Column Name="Код_поставщика" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Наименование_организации" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Код_сырья" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Наименование_сырья" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Стоимость" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Адрес_организации" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Телефон" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Склад_СиМ_Поставщик_СиМ" Member="Склад_СиМ" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Склад_СиМ" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Склад ГП]" Member="Склад_ГП">
+    <Type Name="Склад_ГП">
+      <Column Name="[Код товара]" Member="Код_товара" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Наименование товара]" Member="Наименование_товара" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Количество на складе]" Member="Количество_на_складе" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Склад_ГП_Заказчик_ГП" Member="Заказчик_ГП" ThisKey="Код_товара" OtherKey="Код_товара" Type="Заказчик_ГП" />
+      <Association Name="Склад_ГП_Информация_по_товарам" Member="Информация_по_товарам" ThisKey="Код_товара" OtherKey="Код_товара" Type="Информация_по_товарам" />
+      <Association Name="Склад_ГП_Операции_по_складу_ГП" Member="Операции_по_складу_ГП" ThisKey="Код_товара" OtherKey="Код_товара" Type="Операции_по_складу_ГП" />
+      <Association Name="Готовая_продукция_Склад_ГП" Member="Готовая_продукция" ThisKey="Код_товара" OtherKey="Код_товара" Type="Готовая_продукция" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Склад СиМ]" Member="Склад_СиМ">
+    <Type Name="Склад_СиМ">
+      <Column Name="[Код сырья]" Member="Код_сырья" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Наименование сырья]" Member="Наименование_сырья" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Количество на складе]" Member="Количество_на_складе" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Склад_СиМ_Информация_по_товарам" Member="Информация_по_товарам" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Информация_по_товарам" />
+      <Association Name="Склад_СиМ_Поставщик_СиМ" Member="Поставщик_СиМ" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Поставщик_СиМ" />
+      <Association Name="Склад_СиМ_Цех" Member="Цех" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Цех" Cardinality="One" />
+      <Association Name="Склад_СиМ_Операции_по_складу_СиМ" Member="Операции_по_складу_СиМ" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Операции_по_складу_СиМ" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Цех" Member="Цех">
+    <Type Name="Цех">
+      <Column Name="[Код сырья]" Member="Код_сырья" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Наименование сырья]" Member="Наименование_сырья" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Количество поступлений]" Member="Количество_поступлений" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Единица измерения]" Member="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Цех_Готовая_продукция" Member="Готовая_продукция" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Готовая_продукция" />
+      <Association Name="Цех_Операции_по_цеху" Member="Операции_по_цеху" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Операции_по_цеху" />
+      <Association Name="Склад_СиМ_Цех" Member="Склад_СиМ" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Склад_СиМ" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Операции по складу СиМ]" Member="Операции_по_складу_СиМ">
+    <Type Name="Операции_по_складу_СиМ">
+      <Column Name="Номер_операции" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Код_сырья" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Наименование_сырья" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Статус" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Дата" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Количество" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Единица_измерения" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Склад_СиМ_Операции_по_складу_СиМ" Member="Склад_СиМ" ThisKey="Код_сырья" OtherKey="Код_сырья" Type="Склад_СиМ" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

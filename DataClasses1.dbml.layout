@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="0bea3ee2-f19b-4fe0-9888-d08c360f2572" absoluteBounds="5.875, 3, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DataClasses1DataContext/Готовая_продукция" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48e91e24-33f2-4c5e-8556-e6d045d4f9d7" absoluteBounds="5.8900000000000006, 3.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="380ccb16-6c71-4d29-beb5-3d8f542c7238" absoluteBounds="8.375, 3.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataClasses1DataContext/Заказчик_ГП" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc2cae35-a109-483a-ae19-f41c0dc28fc9" absoluteBounds="8.39, 3.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20903d7f-9d10-4b19-a776-fc58335bb239" absoluteBounds="3.375, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Информация_по_товарам" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2f29b49-4815-4570-839f-e5c600e8288d" absoluteBounds="3.3899999999999997, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="952e3a3f-3939-4871-a601-7c183b86488e" absoluteBounds="5.75, 5.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Операции_по_готовой_продукции" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87564070-8ffe-4211-b80a-fbbf988fb78a" absoluteBounds="5.765, 5.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.8125 : 4.77089680989583); (6.8125 : 5.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Готовая_продукция/Готовая_продукция_Операции_по_готовой_продукции" />
+      <nodes>
+        <classShapeMoniker Id="0bea3ee2-f19b-4fe0-9888-d08c360f2572" />
+        <classShapeMoniker Id="952e3a3f-3939-4871-a601-7c183b86488e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c45a0642-4d79-4915-83d0-bd472d575790" absoluteBounds="8.375, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Операции_по_складу_ГП" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c32384f-4917-4bef-b810-c9c5357c6eba" absoluteBounds="8.39, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d6b0f141-a105-443e-9b7f-b29b8312fad9" absoluteBounds="3.375, 5.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Операции_по_цеху" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13fb714f-cfee-4a37-bdf2-cba15a37664b" absoluteBounds="3.3899999999999997, 5.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f05d542-2f8b-4377-93e4-f13802e29760" absoluteBounds="0.875, 0.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClasses1DataContext/Поставщик_СиМ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b759877-f890-4866-aca3-764735d04925" absoluteBounds="0.88999999999999968, 1.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab8807b1-9c94-44dd-971f-474777cf5efa" absoluteBounds="6, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Склад_ГП" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c755592-dbbf-4eae-bc4d-6d9e10992225" absoluteBounds="6.0150000000000006, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.96875 : 2.45359537760417); (7.96875 : 4.94794840494792); (8.375 : 4.94794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Склад_ГП/Склад_ГП_Заказчик_ГП" />
+      <nodes>
+        <classShapeMoniker Id="ab8807b1-9c94-44dd-971f-474777cf5efa" />
+        <classShapeMoniker Id="380ccb16-6c71-4d29-beb5-3d8f542c7238" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 1.72679768880208); (5.375 : 1.72679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Склад_ГП/Склад_ГП_Информация_по_товарам" />
+      <nodes>
+        <classShapeMoniker Id="ab8807b1-9c94-44dd-971f-474777cf5efa" />
+        <classShapeMoniker Id="20903d7f-9d10-4b19-a776-fc58335bb239" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 1.66429768880208); (8.375 : 1.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Склад_ГП/Склад_ГП_Операции_по_складу_ГП" />
+      <nodes>
+        <classShapeMoniker Id="ab8807b1-9c94-44dd-971f-474777cf5efa" />
+        <classShapeMoniker Id="c45a0642-4d79-4915-83d0-bd472d575790" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.9375 : 3); (6.9375 : 2.45359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Готовая_продукция/Готовая_продукция_Склад_ГП" />
+      <nodes>
+        <classShapeMoniker Id="0bea3ee2-f19b-4fe0-9888-d08c360f2572" />
+        <classShapeMoniker Id="ab8807b1-9c94-44dd-971f-474777cf5efa" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f9a536cc-ddaa-45ba-8c4e-415bf803ac6d" absoluteBounds="0.875, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Склад_СиМ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42c1e006-3d2e-45fb-9ff0-a9ed020338d7" absoluteBounds="0.89000000000000057, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 3.25); (3.375 : 2.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Склад_СиМ/Склад_СиМ_Информация_по_товарам" />
+      <nodes>
+        <classShapeMoniker Id="f9a536cc-ddaa-45ba-8c4e-415bf803ac6d" />
+        <classShapeMoniker Id="20903d7f-9d10-4b19-a776-fc58335bb239" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.8437475 : 3.25); (1.8437475 : 2.97280110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Склад_СиМ/Склад_СиМ_Поставщик_СиМ" />
+      <nodes>
+        <classShapeMoniker Id="f9a536cc-ddaa-45ba-8c4e-415bf803ac6d" />
+        <classShapeMoniker Id="8f05d542-2f8b-4377-93e4-f13802e29760" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f760489d-0e27-4c43-8be4-d55cef34421f" absoluteBounds="3.375, 3.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Цех" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7fa3d4f-5090-4e74-b0c8-236fd97ce03d" absoluteBounds="3.3899999999999997, 3.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 3.91429768880208); (5.875 : 3.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Цех/Цех_Готовая_продукция" />
+      <nodes>
+        <classShapeMoniker Id="f760489d-0e27-4c43-8be4-d55cef34421f" />
+        <classShapeMoniker Id="0bea3ee2-f19b-4fe0-9888-d08c360f2572" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 4.70359537760417); (4.375 : 5.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Цех/Цех_Операции_по_цеху" />
+      <nodes>
+        <classShapeMoniker Id="f760489d-0e27-4c43-8be4-d55cef34421f" />
+        <classShapeMoniker Id="d6b0f141-a105-443e-9b7f-b29b8312fad9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.875 : 3.97679768880208); (3.375 : 3.97679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Склад_СиМ/Склад_СиМ_Цех" />
+      <nodes>
+        <classShapeMoniker Id="f9a536cc-ddaa-45ba-8c4e-415bf803ac6d" />
+        <classShapeMoniker Id="f760489d-0e27-4c43-8be4-d55cef34421f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="670042cd-22ca-44c2-ba31-35a20a7e78e2" absoluteBounds="0.875, 5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Операции_по_складу_СиМ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d52ed3ee-2454-457c-a3cc-a91429224c5b" absoluteBounds="0.89000000000000057, 5.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 4.82859537760417); (1.875 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Склад_СиМ/Склад_СиМ_Операции_по_складу_СиМ" />
+      <nodes>
+        <classShapeMoniker Id="f9a536cc-ddaa-45ba-8c4e-415bf803ac6d" />
+        <classShapeMoniker Id="670042cd-22ca-44c2-ba31-35a20a7e78e2" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
